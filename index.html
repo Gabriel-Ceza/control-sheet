@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+  <title>Controle Fiscal</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
-
-    <script src="scripts/script.js"></script>
+    <div id="container">
+        <table id="table">
+            <tbody id="tBody">
+                <tr>
+                  <th>Neo</th>
+                  <th>Senior</th>
+                  <th>Nome</th>
+                  <th>Simples</th>
+                  <th>Icms</th>
+                  <th>Ipi</th>
+                  <th>Pis</th>
+                  <th>Cofins</th>
+                  <th>Irpj</th>
+                  <th>Csll</th>
+                  <th>Sintegra</th>
+                  <th>Dime</th>
+                  <th>Inscrição Estadual</th>
+                  <th>Observações</th>
+                  <th>Apagar</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  <div id="buttons-container">
+      <div id="radio-buttons">
+          <label>
+            <input type="radio" name="sn-or-lp" value="sn" checked="true">
+            Simples Nacional
+          </label>
+          <label>
+            <input type="radio" name="sn-or-lp" value="lp" >
+            Lucro Presumido
+          </label>
+        </div>
+        <button id="create-line">Criar</button>
+  </div>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
