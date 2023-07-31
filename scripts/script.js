@@ -23,6 +23,7 @@ createLineBtn.addEventListener('click', () => {
                 } 
                 if (thRow.textContent === 'Apagar') {
                     createTd.setAttribute('contenteditable', 'false');
+                    createTd.classList.add('delete');
                 }
             });
             lastRow.appendChild(createTd);
@@ -38,13 +39,12 @@ createLineBtn.addEventListener('click', () => {
             }
             if (th.textContent === 'Apagar') {
                 createTd.setAttribute('contenteditable', 'false');
+                createTd.classList.add('delete');
             }
             lastRow.appendChild(createTd);
         }
     }
 })
-
-
 
 const verifyRadioBtn = () => {
     for (const btn of radiobtns) {
@@ -57,6 +57,26 @@ const verifyRadioBtn = () => {
         
     }    
 }
+
+const deleteRow = (event) => {   
+    const result = confirmation(); 
+    const target = event.target;
+    if (result) {
+        if (target.classList.contains('delete')) {
+            const row = target.closest('tr');
+            if (row) {
+                row.remove();
+            }
+        }
+    } 
+}
+
+const confirmation = () => {
+    const result = window.confirm('Deseja realmente deletar?'); 
+    return result;   
+}
+
+tBody.addEventListener('click', deleteRow);
 
 /* para editar input quando preenchido -- AINDA TEM QUE FINALIZAR*/
 const editableCells = document.querySelectorAll('td[contenteditable="true"]');
