@@ -59,15 +59,13 @@ const verifyRadioBtn = () => {
 }
 
 const deleteRow = (event) => {   
-    const result = confirmation(); 
     const target = event.target;
-    if (result) {
-        if (target.classList.contains('delete')) {
-            const row = target.closest('tr');
-            if (row) {
-                row.remove();
-            }
-        }
+    if (target.classList.contains('delete')) {
+        const result = confirmation(); 
+        if (result) {
+            const row = target.parentElement;
+            row.remove();
+        }           
     } 
 }
 
@@ -85,3 +83,5 @@ editableCells.forEach(cell => {
    
   });
 });
+
+
